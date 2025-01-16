@@ -1,0 +1,9 @@
+services:
+  telegram-bot-monitor:
+    build: .
+    container_name: telegram_bot_monitor
+    env_file:
+      - .env  # Load environment variables from the .env file
+    volumes:
+      - .:/app  # Mount the current directory to /app in the container
+    restart: unless-stopped
